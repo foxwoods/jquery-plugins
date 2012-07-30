@@ -64,6 +64,8 @@
 			container.find('label').css({
 				top: parseInt(input.css('paddingTop')) + parseInt(input.css('borderTopWidth')) + (input.offset().top - container.offset().top),
 				left: parseInt(input.css('paddingLeft')) + parseInt(input.css('borderLeftWidth')) + (input.offset().left - container.offset().left),
+        color: "#999",
+        cursor: "text",
 				display: input.val().length > 0 ? 'none' : 'block'
 			})
 
