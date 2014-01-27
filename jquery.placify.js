@@ -49,10 +49,15 @@
 												.append($('<label for="' + input.attr('id') + '" style="position: relative">' + input.attr('placeholder') + '</label>'));
 
 			this.togglePlaceholderByValue = function () {
-				if (input.is(":focus") || input.val().length > 0)
-					container.fadeOut(opts.fadeSpeed);
-				else if (input.val().length == 0)
+				if (input.is(":focus") || input.val().length > 0) {
+					if (container.is(':visible')) {
+						container.fadeOut(opts.fadeSpeed);
+					} else {
+						container.hide();
+					}
+				} else if (input.val().length == 0) {
 					container.fadeIn(opts.fadeSpeed);
+				}
 			};
 
 			input.before(container)
